@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashCo Admin Dashboard - Blog</title>
+    <link rel="stylesheet" href="/styles/admin/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <h2>TrashCo</h2>
+            </div>
+            
+            <div class="dashboard-title">
+                <h3>DASHBOARD</h3>
+                <div class="divider"></div>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>USER LIST</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-percentage"></i>
+                    <span>TPS</span>
+                </div>
+                <div class="menu-item active">
+                    <i class="fas fa-blog"></i>
+                    <span>BLOG</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-store"></i>
+                    <span>MARKET</span>
+                </div>
+            </nav>
+
+            <div class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="blog-table">
+                <h2>Blog Posts</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IMAGE</th>
+                            <th>TITLE</th>
+                            <th>CONTENT</th>
+                            <th>DATE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="/asset/bghome.jpg" alt="Blog" class="blog-image"></td>
+                            <td>Tips Mengolah Sampah</td>
+                            <td class="blog-content">Berikut adalah tips sederhana untuk mengolah sampah rumah tangga...</td>
+                            <td>2024-02-20</td>
+                            <td>
+                                <i class="fas fa-edit edit-icon"></i>
+                                <i class="fas fa-trash-alt delete-icon"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="add-button" onclick="openPopup()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="blogPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Add New Blog Post</h3>
+                <button class="close-button" onclick="closePopup()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="blog-form">
+                <div class="form-group">
+                    <label>Cover Image</label>
+                    <div class="image-upload">
+                        <input type="file" id="blogImage" accept="image/*">
+                        <label for="blogImage" class="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload cover image</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" placeholder="Enter blog title">
+                </div>
+
+                <div class="form-group">
+                    <label>Content</label>
+                    <div class="rich-text-editor">
+                        <div class="editor-toolbar">
+                            <button type="button"><i class="fas fa-bold"></i></button>
+                            <button type="button"><i class="fas fa-italic"></i></button>
+                            <button type="button"><i class="fas fa-list-ul"></i></button>
+                            <button type="button"><i class="fas fa-list-ol"></i></button>
+                            <button type="button"><i class="fas fa-link"></i></button>
+                        </div>
+                        <textarea placeholder="Write your blog content here..." rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closePopup()">Cancel</button>
+                    <button type="submit" class="submit-btn">Publish Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('blogPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('blogPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

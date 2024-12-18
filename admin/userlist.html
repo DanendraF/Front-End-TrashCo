@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashCo Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles/admin/userlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>TrashCo</h2>
+            </div>
+            
+            <div class="dashboard-title">
+                <h3>DASHBOARD</h3>
+                <div class="divider"></div>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item active">
+                    <i class="fas fa-users"></i>
+                    <span>USER LIST</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-percentage"></i>
+                    <span>TPS</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-blog"></i>
+                    <span>BLOG</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-store"></i>
+                    <span>MARKET</span>
+                </div>
+            </nav>
+
+            <div class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="user-table">
+                <h2>Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>CREATION DATE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Farrel</td>
+                            <td>Farrel@gmail.com</td>
+                            <td>19/05/2005 - 16:07</td>
+                            <td><i class="fas fa-trash-alt delete-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

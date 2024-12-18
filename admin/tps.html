@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashCo Admin Dashboard - TPS</title>
+    <link rel="stylesheet" href="/styles/admin/tps.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>TrashCo</h2>
+            </div>
+            
+            <div class="dashboard-title">
+                <h3>DASHBOARD</h3>
+                <div class="divider"></div>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>USER LIST</span>
+                </div>
+                <div class="menu-item active">
+                    <i class="fas fa-percentage"></i>
+                    <span>TPS</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-blog"></i>
+                    <span>BLOG</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-store"></i>
+                    <span>MARKET</span>
+                </div>
+            </nav>
+
+            <div class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="tps-table">
+                <h2>TPS List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IMAGE</th>
+                            <th>NAME</th>
+                            <th>LOCATION</th>
+                            <th>RATING</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="/asset/bghome.jpg" alt="TPS" class="tps-image"></td>
+                            <td>TPS Sukamaju</td>
+                            <td>Jl. Sukamaju No. 123</td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </td>
+                            <td><i class="fas fa-trash-alt delete-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="add-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup-overlay" id="addTpsPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Add New TPS</h3>
+                <button class="close-button" onclick="closePopup()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="tps-form">
+                <div class="form-group">
+                    <label>TPS Image</label>
+                    <div class="image-upload">
+                        <input type="file" id="tpsImage" accept="image/*">
+                        <label for="tpsImage" class="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload image</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>TPS Name</label>
+                    <input type="text" placeholder="Enter TPS name">
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" placeholder="Enter TPS location">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Enter TPS description" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Operating Hours</label>
+                    <div class="hours-input">
+                        <input type="time" placeholder="Open">
+                        <span>to</span>
+                        <input type="time" placeholder="Close">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closePopup()">Cancel</button>
+                    <button type="submit" class="submit-btn">Add TPS</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    function openPopup() {
+        document.getElementById('addTpsPopup').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+        document.getElementById('addTpsPopup').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    document.querySelector('.add-button').addEventListener('click', openPopup);
+    </script>
+</body>
+</html>
