@@ -1,0 +1,131 @@
+/* Reset dan style dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f3ef; /* Warna latar belakang yang lembut */
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-family: 'Pacifico', cursive;
+    color: #006B3E;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #006B3E;
+}
+
+.nav-links a.active {
+    color: #006B3E;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 1200px;
+    margin: 100px auto 2rem auto; /* Top margin for navbar */
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.main-container h2 {
+    margin-top: 10px;
+    margin-bottom: 20px; /* Tambahkan jarak di bawah judul */
+}
+
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Menyesuaikan lebar kartu */
+    padding: 15px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 150px; /* Menyesuaikan tinggi gambar */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
